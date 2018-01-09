@@ -1,6 +1,5 @@
 package com.notification;
 
-import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
@@ -44,25 +43,6 @@ public abstract class NotificationManager {
 	}
 
 	/**
-	 * Adds a Notification and will also make it visible.
-	 *
-	 * @param note
-	 *            the Notification to be added
-	 * @param time
-	 *            the amount of time the Notification should display (e.g., Time.seconds(1) will make the Notification
-	 *            display for one second).
-	 */
-	public final void addNotification(Notification note, Time time, Window window) {
-		if (!m_notifications.contains(note)) {
-
-			note.setRemovalTime(time);
-			note.setNotificationManager(this);
-			m_notifications.add(note);
-			notificationAdded(note, time, window);
-		}
-	}
-
-	/**
 	 * Removes a Notification and will also hide it.
 	 *
 	 * @param note
@@ -77,8 +57,6 @@ public abstract class NotificationManager {
 	}
 
 	protected abstract void notificationAdded(Notification note, Time time);
-
-	protected abstract void notificationAdded(Notification note, Time time, Window window);
 
 	protected abstract void notificationRemoved(Notification note);
 

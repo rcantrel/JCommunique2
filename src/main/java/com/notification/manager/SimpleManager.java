@@ -1,6 +1,5 @@
 package com.notification.manager;
 
-import java.awt.Window;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -113,15 +112,6 @@ public class SimpleManager extends NotificationManager {
 
 	protected Screen getScreen() {
 		return m_screen;
-	}
-
-	public void setScreenFromWindow(Window window) {
-		m_screen = Screen.calculated(window);
-	}
-
-	@Override
-	protected void notificationAdded(Notification note, Time time, Window window) {
-		m_screen = Screen.calculated(window);
 	}
 
 	@Override

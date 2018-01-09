@@ -2,8 +2,6 @@ package com.unit;
 
 import static org.junit.Assert.assertEquals;
 
-import java.awt.Window;
-
 import org.junit.Test;
 
 import com.notification.Notification;
@@ -80,11 +78,6 @@ public class NotificationManagerTest {
 	private class CustomNotificationManager extends NotificationManager {
 		private int addedCounter = 0;
 		private int removedCounter = 0;
-
-		@Override
-		protected void notificationAdded(Notification note, Time time, Window window) {
-			notificationAdded(note, time);
-		}
 
 		@Override
 		protected void notificationAdded(Notification note, Time time) {

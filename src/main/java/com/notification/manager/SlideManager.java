@@ -1,6 +1,5 @@
 package com.notification.manager;
 
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -129,11 +128,6 @@ public class SlideManager extends NotificationManager {
 			m_slideIn = SlideDirection.EAST;
 			break;
 		}
-	}
-
-	@Override
-	protected void notificationAdded(Notification note, Time time, Window window) {
-		notificationAdded(note, time);
 	}
 
 	@Override

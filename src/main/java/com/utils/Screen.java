@@ -35,13 +35,6 @@ public class Screen {
 		calculatePositions();
 	}
 
-	public static Screen calculated(Window window) {
-		if(window != null)
-			return new Screen(window, 60);
-		else
-			return standard();
-	}
-
 	public static Screen standard() {
 		return new Screen(true, 60);
 	}
