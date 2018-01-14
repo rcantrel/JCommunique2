@@ -8,6 +8,8 @@ import java.awt.Window;
 
 import com.notification.Notification;
 import com.notification.NotificationFactory.Location;
+import com.platform.Mac;
+import com.platform.Platform;
 
 public class Screen {
 	private int m_width = 0;
@@ -22,6 +24,8 @@ public class Screen {
 	private int m_bottomY = 0;
 
 	private int m_padding = 0;
+	
+	private Platform platform = new Platform();
 
 	private Screen(boolean spanMultipleMonitors, int padding) {
 		m_padding = padding;
@@ -93,7 +97,7 @@ public class Screen {
 
 		m_topY = m_padding;
 		m_centerY = (int) (m_height / 2d);
-		m_bottomY = m_height - m_padding;
+		m_bottomY = m_height - m_padding - (platform.getOperatingSystem() instanceof Mac ? 50 : 0);
 	}
 
 	public int getX(Location loc, Notification note) {
