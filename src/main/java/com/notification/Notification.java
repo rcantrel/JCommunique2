@@ -81,7 +81,9 @@ public abstract class Notification {
 	}
 
 	public void startRemovalTimer() {
-		m_manager.scheduleRemoval(this, removalTime);
+		if(m_manager != null) {
+			m_manager.scheduleRemoval(this, removalTime);
+		}
 	}
 
 	/**
