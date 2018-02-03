@@ -1,0 +1,519 @@
+com.demo.CustomNotification -> com.demo.CustomNotification:
+    javax.swing.JLabel m_label -> a
+    javax.swing.JButton m_button -> b
+    javax.swing.JProgressBar m_progress -> c
+    com.theme.TextTheme m_theme -> d
+    28:59:void <init>() -> <init>
+    68:74:void setTextTheme(com.theme.TextTheme) -> setTextTheme
+    77:77:java.lang.String getText() -> getText
+    81:82:void setText(java.lang.String) -> setText
+    86:94:void setWindowTheme(com.theme.WindowTheme) -> setWindowTheme
+    21:21:javax.swing.JButton access$000(com.demo.CustomNotification) -> a
+    21:21:javax.swing.JProgressBar access$100(com.demo.CustomNotification) -> b
+com.demo.CustomNotification$1 -> com.demo.CustomNotification$1:
+    com.demo.CustomNotification this$0 -> a
+    33:33:void <init>(com.demo.CustomNotification) -> <init>
+    36:54:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+com.demo.CustomNotification$1$1 -> com.demo.CustomNotification$1$1:
+    javax.swing.Timer val$timer -> a
+    com.demo.CustomNotification$1 this$1 -> b
+    40:40:void <init>(com.demo.CustomNotification$1,javax.swing.Timer) -> <init>
+    43:50:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+com.demo.CustomNotification$CustomBuilder -> com.demo.CustomNotification$CustomBuilder:
+    96:96:void <init>() -> <init>
+    99:110:com.demo.CustomNotification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+    96:96:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+com.demo.CustomNotificationDemo -> com.demo.CustomNotificationDemo:
+    10:10:void <init>() -> <init>
+    12:21:void main(java.lang.String[]) -> main
+com.demo.QueueManagerDemo -> com.demo.QueueManagerDemo:
+    11:11:void <init>() -> <init>
+    13:47:void main(java.lang.String[]) -> main
+com.demo.SequenceManagerDemo -> com.demo.SequenceManagerDemo:
+    15:15:void <init>() -> <init>
+    19:39:void main(java.lang.String[]) -> main
+com.demo.SimpleManagerDemo -> com.demo.SimpleManagerDemo:
+    17:17:void <init>() -> <init>
+    24:64:void main(java.lang.String[]) -> main
+com.demo.SlideManagerDemo -> com.demo.SlideManagerDemo:
+    10:10:void <init>() -> <init>
+    13:31:void main(java.lang.String[]) -> main
+com.exception.NotificationException -> com.exception.NotificationException:
+    long serialVersionUID -> serialVersionUID
+    7:8:void <init>(java.lang.String) -> <init>
+com.notification.Notification -> com.notification.Notification:
+    javax.swing.JWindow m_window -> m_window
+    javax.swing.JPanel m_panel -> m_panel
+    com.notification.NotificationManager m_manager -> a
+    java.util.List m_listeners -> b
+    com.notification.Notification$PauseOnMouseOverListener pauseOnMouseOverListener -> c
+    java.util.Timer removalTimer -> d
+    com.utils.Time removalTime -> e
+    24:30:void <init>() -> <init>
+    39:40:void addNotificationListener(com.notification.NotificationListener) -> addNotificationListener
+    49:50:void removeNotificationListener(com.notification.NotificationListener) -> removeNotificationListener
+    53:54:void setRemovalTime(com.utils.Time) -> setRemovalTime
+    57:64:void pauseOnMouseOver(boolean) -> pauseOnMouseOver
+    73:74:void setRemovalTimer(java.util.Timer) -> setRemovalTimer
+    77:81:void stopRemoval() -> stopRemoval
+    84:87:void startRemovalTimer() -> startRemovalTimer
+    93:93:boolean isManaged() -> isManaged
+    100:100:com.notification.NotificationManager getNotificationManager() -> getNotificationManager
+    104:105:void setNotificationManager(com.notification.NotificationManager) -> setNotificationManager
+    112:113:void removeFromManager() -> removeFromManager
+    116:119:void fireListeners(java.lang.String) -> fireListeners
+    int getX() -> getX
+    int getY() -> getY
+    void setLocation(int,int) -> setLocation
+    int getWidth() -> getWidth
+    int getHeight() -> getHeight
+    void setSize(int,int) -> setSize
+    double getOpacity() -> getOpacity
+    void setOpacity(double) -> setOpacity
+    void show() -> show
+    void hide() -> hide
+    boolean isShown() -> isShown
+com.notification.Notification$PauseOnMouseOverListener -> com.notification.Notification$a:
+    com.notification.Notification this$0 -> a
+    152:152:void <init>(com.notification.Notification) -> <init>
+    155:156:void mouseEntered(java.awt.event.MouseEvent) -> mouseEntered
+    160:161:void mouseExited(java.awt.event.MouseEvent) -> mouseExited
+com.notification.NotificationBuilder -> com.notification.NotificationBuilder:
+    com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+com.notification.NotificationFactory -> com.notification.NotificationFactory:
+    com.theme.ThemePackage m_pack -> a
+    java.util.HashMap m_builders -> b
+    java.lang.String NORTH -> NORTH
+    java.lang.String NORTHEAST -> NORTHEAST
+    java.lang.String EAST -> EAST
+    java.lang.String SOUTHEAST -> SOUTHEAST
+    java.lang.String SOUTH -> SOUTH
+    java.lang.String SOUTHWEST -> SOUTHWEST
+    java.lang.String WEST -> WEST
+    java.lang.String NORTHWEST -> NORTHWEST
+    35:44:void <init>() -> <init>
+    35:48:void <init>(com.theme.ThemePackage) -> <init>
+    58:59:void setThemePackage(com.theme.ThemePackage) -> setThemePackage
+    72:73:void addBuilder(java.lang.Class,com.notification.NotificationBuilder) -> addBuilder
+    84:85:void removeBuilder(java.lang.Class) -> removeBuilder
+    97:102:com.notification.Notification build(java.lang.Class) -> build
+    117:122:com.notification.Notification build(java.lang.Class,java.lang.Object[]) -> build
+    135:135:com.notification.types.TextNotification buildTextNotification(java.lang.String,java.lang.String) -> buildTextNotification
+    148:148:com.notification.types.AcceptNotification buildAcceptNotification(java.lang.String,java.lang.String) -> buildAcceptNotification
+    165:165:com.notification.types.AcceptNotification buildAcceptNotification(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> buildAcceptNotification
+    180:180:com.notification.types.IconNotification buildIconNotification(java.lang.String,java.lang.String,javax.swing.ImageIcon) -> buildIconNotification
+    191:191:com.notification.types.ProgressBarNotification buildProgressBarNotification(java.lang.String) -> buildProgressBarNotification
+com.notification.NotificationFactory$AcceptNotificationBuilder -> com.notification.NotificationFactory$a:
+    209:209:void <init>(com.notification.NotificationFactory) -> <init>
+    209:209:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+    1212:1226:com.notification.types.AcceptNotification buildNotification(com.theme.ThemePackage,java.lang.Object[]):212:226 -> buildNotification
+    1212:1226:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]):209 -> buildNotification
+    209:209:void <init>(com.notification.NotificationFactory,byte) -> <init>
+com.notification.NotificationFactory$IconNotificationBuilder -> com.notification.NotificationFactory$b:
+    230:230:void <init>(com.notification.NotificationFactory) -> <init>
+    230:230:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+    1233:1242:com.notification.types.IconNotification buildNotification(com.theme.ThemePackage,java.lang.Object[]):233:242 -> buildNotification
+    1233:1242:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]):230 -> buildNotification
+    230:230:void <init>(com.notification.NotificationFactory,byte) -> <init>
+com.notification.NotificationFactory$ProgressBarNotificationBuilder -> com.notification.NotificationFactory$c:
+    246:246:void <init>(com.notification.NotificationFactory) -> <init>
+    246:246:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+    1249:1256:com.notification.types.ProgressBarNotification buildNotification(com.theme.ThemePackage,java.lang.Object[]):249:256 -> buildNotification
+    1249:1256:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]):246 -> buildNotification
+    246:246:void <init>(com.notification.NotificationFactory,byte) -> <init>
+com.notification.NotificationFactory$TextNotificationBuilder -> com.notification.NotificationFactory$d:
+    194:194:void <init>(com.notification.NotificationFactory) -> <init>
+    194:194:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]) -> buildNotification
+    1197:1205:com.notification.types.TextNotification buildNotification(com.theme.ThemePackage,java.lang.Object[]):197:205 -> buildNotification
+    1197:1205:com.notification.Notification buildNotification(com.theme.ThemePackage,java.lang.Object[]):194 -> buildNotification
+    194:194:void <init>(com.notification.NotificationFactory,byte) -> <init>
+com.notification.NotificationListener -> com.notification.NotificationListener:
+    void actionCompleted(com.notification.Notification,java.lang.String) -> actionCompleted
+com.notification.NotificationManager -> com.notification.NotificationManager:
+    java.util.List m_notifications -> a
+    16:18:void <init>() -> <init>
+    24:24:java.util.List getNotifications() -> getNotifications
+    37:43:void addNotification(com.notification.Notification,com.utils.Time) -> addNotification
+    52:57:void removeNotification(com.notification.Notification) -> removeNotification
+    void notificationAdded(com.notification.Notification,com.utils.Time) -> notificationAdded
+    void notificationRemoved(com.notification.Notification) -> notificationRemoved
+    64:69:void scheduleRemoval(com.notification.Notification,com.utils.Time) -> scheduleRemoval
+com.notification.NotificationManager$RemoveTask -> com.notification.NotificationManager$a:
+    com.notification.Notification m_note -> a
+    com.notification.NotificationManager this$0 -> b
+    74:76:void <init>(com.notification.NotificationManager,com.notification.Notification) -> <init>
+    80:81:void run() -> run
+com.notification.manager.QueueManager -> com.notification.manager.QueueManager:
+    javax.swing.Timer m_timer -> a
+    int m_verticalPadding -> b
+    double m_snapFactor -> c
+    com.notification.manager.QueueManager$ScrollDirection m_scroll -> d
+    17:35:void <init>() -> <init>
+    17:39:void <init>(java.lang.String) -> <init>
+    45:45:int getVerticalPadding() -> getVerticalPadding
+    56:57:void setVerticalPadding(int) -> setVerticalPadding
+    64:64:double getSnapFactor() -> getSnapFactor
+    75:76:void setSnapFactor(double) -> setSnapFactor
+    82:82:com.notification.manager.QueueManager$ScrollDirection getScrollDirection() -> getScrollDirection
+    92:93:void setScrollDirection(com.notification.manager.QueueManager$ScrollDirection) -> setScrollDirection
+    100:101:void stop() -> stop
+    15:15:int access$100(com.notification.manager.QueueManager) -> a
+    15:15:com.notification.manager.QueueManager$ScrollDirection access$200(com.notification.manager.QueueManager) -> b
+    15:15:double access$300(com.notification.manager.QueueManager) -> c
+com.notification.manager.QueueManager$1 -> com.notification.manager.QueueManager$1:
+    com.notification.Notification notification -> a
+    com.utils.Time time -> b
+    1065:1068:void com.notification.manager.SequenceManager$NotificationShowTime.<init>(com.notification.manager.SequenceManager,com.notification.Notification,com.utils.Time):65:68 -> <init>
+com.notification.manager.QueueManager$MovementManager -> com.notification.manager.QueueManager$a:
+    com.notification.manager.QueueManager this$0 -> a
+    103:103:void <init>(com.notification.manager.QueueManager) -> <init>
+    114:147:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    1105:1109:int getPreviousShownIndex(java.util.List,int):105:109 -> actionPerformed
+    1105:1109:void actionPerformed(java.awt.event.ActionEvent):124 -> actionPerformed
+    103:103:void <init>(com.notification.manager.QueueManager,byte) -> <init>
+com.notification.manager.QueueManager$ScrollDirection -> com.notification.manager.QueueManager$ScrollDirection:
+    com.notification.manager.QueueManager$ScrollDirection NORTH -> NORTH
+    com.notification.manager.QueueManager$ScrollDirection SOUTH -> SOUTH
+    com.notification.manager.QueueManager$ScrollDirection[] $VALUES -> a
+    24:24:com.notification.manager.QueueManager$ScrollDirection[] values() -> values
+    24:24:com.notification.manager.QueueManager$ScrollDirection valueOf(java.lang.String) -> valueOf
+    24:24:void <init>(java.lang.String,int) -> <init>
+    24:25:void <clinit>() -> <clinit>
+com.notification.manager.SequenceManager -> com.notification.manager.SequenceManager:
+    java.util.List m_sequence -> a
+    com.notification.Notification m_currentNotification -> b
+    20:25:void <init>() -> <init>
+    20:29:void <init>(java.lang.String) -> <init>
+    33:40:void notificationAdded(com.notification.Notification,com.utils.Time) -> notificationAdded
+    1043:1044:void superAdded(com.notification.Notification,com.utils.Time):43:44 -> notificationAdded
+    1043:1044:void notificationAdded(com.notification.Notification,com.utils.Time):36 -> notificationAdded
+    15:15:com.notification.Notification access$100(com.notification.manager.SequenceManager) -> a
+    15:15:com.notification.Notification access$102(com.notification.manager.SequenceManager,com.notification.Notification) -> a
+    15:15:java.util.List access$200(com.notification.manager.SequenceManager) -> b
+    15:15:void access$300(com.notification.manager.SequenceManager,com.notification.Notification,com.utils.Time) -> a
+    2043:2044:void superAdded(com.notification.Notification,com.utils.Time):43:44 -> a
+    2043:2044:void access$300(com.notification.manager.SequenceManager,com.notification.Notification,com.utils.Time):15 -> a
+com.notification.manager.SequenceManager$CloseListener -> com.notification.manager.SequenceManager$a:
+    com.notification.manager.SequenceManager this$0 -> a
+    46:46:void <init>(com.notification.manager.SequenceManager) -> <init>
+    49:58:void actionCompleted(com.notification.Notification,java.lang.String) -> actionCompleted
+    46:46:void <init>(com.notification.manager.SequenceManager,byte) -> <init>
+com.notification.manager.SimpleManager -> com.notification.manager.SimpleManager:
+    java.lang.String m_loc -> a
+    com.utils.Screen m_screen -> b
+    boolean m_fadeEnabled -> c
+    com.utils.Time m_fadeTime -> d
+    com.notification.manager.SimpleManager$FaderRunnable m_fader -> e
+    java.lang.Thread m_faderThread -> f
+    21:37:void <init>() -> <init>
+    21:41:void <init>(java.lang.String) -> <init>
+    47:47:com.utils.Time getFadeTime() -> getFadeTime
+    57:58:void setFadeTime(com.utils.Time) -> setFadeTime
+    64:66:boolean isFadeEnabled() -> isFadeEnabled
+    76:89:void setFadeEnabled(boolean) -> setFadeEnabled
+    92:94:void syncFadeEnabledWithPlatform() -> a
+    100:100:java.lang.String getLocation() -> getLocation
+    110:111:void setLocation(java.lang.String) -> setLocation
+    114:114:com.utils.Screen getScreen() -> getScreen
+    119:131:void notificationAdded(com.notification.Notification,com.utils.Time) -> notificationAdded
+    135:140:void notificationRemoved(com.notification.Notification) -> notificationRemoved
+    143:144:void startFade(com.notification.Notification,double) -> a
+    1147:1147:double getDeltaFade(double):147:147 -> a
+    1147:1147:void startFade(com.notification.Notification,double):143 -> a
+com.notification.manager.SimpleManager$Fader -> com.notification.manager.SimpleManager$a:
+    com.notification.Notification m_note -> a
+    long m_fadeStartTime -> b
+    double m_startFade -> c
+    double m_stopFade -> d
+    double m_deltaFade -> e
+    192:198:void <init>(com.notification.manager.SimpleManager,com.notification.Notification,double,double) -> <init>
+    201:209:void updateFade() -> a
+    212:212:boolean isFinishedFading() -> b
+com.notification.manager.SimpleManager$FaderRunnable -> com.notification.manager.SimpleManager$b:
+    java.util.List m_faders -> a
+    boolean m_shouldStop -> b
+    154:157:void <init>(com.notification.manager.SimpleManager) -> <init>
+    160:161:void addFader(com.notification.manager.SimpleManager$Fader) -> a
+    164:165:void stop() -> a
+    169:182:void run() -> run
+com.notification.manager.SlideManager -> com.notification.manager.SlideManager:
+    java.lang.String m_loc -> a
+    com.utils.Screen m_standardScreen -> b
+    com.utils.Screen m_noPaddingScreen -> c
+    java.util.HashMap m_sliders -> d
+    com.notification.manager.SlideManager$SlideDirection m_slideIn -> e
+    double m_slideSpeed -> f
+    java.util.HashMap m_slideStates -> g
+    boolean m_overwrite -> h
+    34:48:void <init>() -> <init>
+    34:52:void <init>(java.lang.String) -> <init>
+    58:58:java.lang.String getLocation() -> getLocation
+    68:71:void setLocation(java.lang.String) -> setLocation
+    1113:1131:void recalculateSlideDirection():113:131 -> setLocation
+    1113:1131:void setLocation(java.lang.String):70 -> setLocation
+    77:77:com.notification.manager.SlideManager$SlideDirection getSlideDirection() -> getSlideDirection
+    87:89:void setSlideDirection(com.notification.manager.SlideManager$SlideDirection) -> setSlideDirection
+    95:95:double getSlideSpeed() -> getSlideSpeed
+    105:106:void setSlideSpeed(double) -> setSlideSpeed
+    109:109:com.utils.Screen getScreen() -> getScreen
+    135:145:void notificationAdded(com.notification.Notification,com.utils.Time) -> notificationAdded
+    149:154:void notificationRemoved(com.notification.Notification) -> notificationRemoved
+    18:18:com.utils.Screen access$400(com.notification.manager.SlideManager) -> a
+    18:18:com.utils.Screen access$500(com.notification.manager.SlideManager) -> b
+com.notification.manager.SlideManager$EastSlider -> com.notification.manager.SlideManager$a:
+    com.notification.manager.SlideManager this$0 -> g
+    264:264:void <init>(com.notification.manager.SlideManager) -> <init>
+    267:275:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    279:280:void setBorderPosition(com.notification.Notification,java.lang.String) -> a
+    264:264:void <init>(com.notification.manager.SlideManager,byte) -> <init>
+com.notification.manager.SlideManager$NorthSlider -> com.notification.manager.SlideManager$b:
+    com.notification.manager.SlideManager this$0 -> g
+    226:226:void <init>(com.notification.manager.SlideManager) -> <init>
+    229:237:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    241:242:void setBorderPosition(com.notification.Notification,java.lang.String) -> a
+    226:226:void <init>(com.notification.manager.SlideManager,byte) -> <init>
+com.notification.manager.SlideManager$SlideDirection -> com.notification.manager.SlideManager$SlideDirection:
+    com.notification.manager.SlideManager$SlideDirection NORTH -> NORTH
+    com.notification.manager.SlideManager$SlideDirection SOUTH -> SOUTH
+    com.notification.manager.SlideManager$SlideDirection EAST -> EAST
+    com.notification.manager.SlideManager$SlideDirection WEST -> WEST
+    com.notification.manager.SlideManager$SlideDirection m_opposite -> a
+    com.notification.manager.SlideManager$SlideDirection[] $VALUES -> b
+    166:166:com.notification.manager.SlideManager$SlideDirection[] values() -> values
+    166:166:com.notification.manager.SlideManager$SlideDirection valueOf(java.lang.String) -> valueOf
+    171:173:void <init>(java.lang.String,int) -> <init>
+    175:178:void <init>(java.lang.String,int,com.notification.manager.SlideManager$SlideDirection) -> <init>
+    181:181:com.notification.manager.SlideManager$SlideDirection getOpposite() -> getOpposite
+    166:167:void <clinit>() -> <clinit>
+com.notification.manager.SlideManager$SlideState -> com.notification.manager.SlideManager$c:
+    java.lang.String loc -> a
+    com.notification.manager.SlideManager$SlideDirection returnDirection -> b
+    160:163:void <init>(com.notification.manager.SlideManager,java.lang.String,com.notification.manager.SlideManager$SlideDirection) -> <init>
+com.notification.manager.SlideManager$Slider -> com.notification.manager.SlideManager$d:
+    com.notification.Notification m_note -> a
+    double m_delta -> b
+    double m_stopX -> c
+    double m_stopY -> d
+    double m_x -> e
+    double m_y -> f
+    boolean m_slideIn -> g
+    java.lang.String m_startLocation -> h
+    com.notification.manager.SlideManager this$0 -> i
+    185:185:void <init>(com.notification.manager.SlideManager) -> <init>
+    199:215:void animate(com.notification.Notification,java.lang.String,double,double,boolean) -> a
+    218:221:void manageStop(java.awt.event.ActionEvent) -> a
+    void setBorderPosition(com.notification.Notification,java.lang.String) -> a
+    185:185:void <init>(com.notification.manager.SlideManager,byte) -> <init>
+com.notification.manager.SlideManager$SouthSlider -> com.notification.manager.SlideManager$e:
+    com.notification.manager.SlideManager this$0 -> g
+    245:245:void <init>(com.notification.manager.SlideManager) -> <init>
+    248:256:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    260:261:void setBorderPosition(com.notification.Notification,java.lang.String) -> a
+    245:245:void <init>(com.notification.manager.SlideManager,byte) -> <init>
+com.notification.manager.SlideManager$WestSlider -> com.notification.manager.SlideManager$f:
+    com.notification.manager.SlideManager this$0 -> g
+    283:283:void <init>(com.notification.manager.SlideManager) -> <init>
+    286:294:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    298:299:void setBorderPosition(com.notification.Notification,java.lang.String) -> a
+    283:283:void <init>(com.notification.manager.SlideManager,byte) -> <init>
+com.notification.types.AcceptNotification -> com.notification.types.AcceptNotification:
+    javax.swing.JButton m_accept -> a
+    javax.swing.JButton m_decline -> b
+    boolean m_accepted -> c
+    23:49:void <init>() -> <init>
+    58:64:boolean blockUntilReply() -> blockUntilReply
+    74:76:void setButtonDimensions(java.awt.Dimension) -> setButtonDimensions
+    82:82:java.lang.String getAcceptText() -> getAcceptText
+    92:93:void setAcceptText(java.lang.String) -> setAcceptText
+    99:99:java.lang.String getDeclineText() -> getDeclineText
+    109:110:void setDeclineText(java.lang.String) -> setDeclineText
+    114:119:void hide() -> hide
+    123:127:void setTextTheme(com.theme.TextTheme) -> setTextTheme
+    131:137:void setWindowTheme(com.theme.WindowTheme) -> setWindowTheme
+    17:17:boolean access$002(com.notification.types.AcceptNotification,boolean) -> a
+com.notification.types.AcceptNotification$1 -> com.notification.types.AcceptNotification$1:
+    com.notification.types.AcceptNotification this$0 -> a
+    28:28:void <init>(com.notification.types.AcceptNotification) -> <init>
+    31:33:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+com.notification.types.AcceptNotification$2 -> com.notification.types.AcceptNotification$2:
+    com.notification.types.AcceptNotification this$0 -> a
+    35:35:void <init>(com.notification.types.AcceptNotification) -> <init>
+    38:40:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+com.notification.types.BorderLayoutNotification -> com.notification.types.BorderLayoutNotification:
+    javax.swing.JPanel m_panel -> a
+    javax.swing.JPanel m_north_panel -> b
+    com.notification.types.BorderLayoutNotification$CloseButton closeButton -> c
+    int PANEL_PADDING -> PANEL_PADDING
+    31:39:void <init>() -> <init>
+    50:63:void addComponent(java.awt.Component,java.lang.String) -> addComponent
+    72:76:void removeComponent(java.awt.Component) -> removeComponent
+    79:80:void showCloseButton(boolean) -> showCloseButton
+com.notification.types.BorderLayoutNotification$CloseButton -> com.notification.types.BorderLayoutNotification$a:
+    long serialVersionUID -> serialVersionUID
+    java.awt.Dimension buttonDimension -> b
+    boolean isRollOver -> a
+    java.awt.Color rollOverBackGround -> c
+    java.awt.Color pressedBackGround -> d
+    com.notification.types.BorderLayoutNotification notif -> e
+    com.notification.types.BorderLayoutNotification this$0 -> f
+    86:121:void <init>(com.notification.types.BorderLayoutNotification,com.notification.types.BorderLayoutNotification) -> <init>
+    125:139:void paint(java.awt.Graphics) -> paint
+    143:144:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    148:148:boolean isFocusTraversable() -> isFocusTraversable
+    154:154:void requestFocus() -> requestFocus
+    158:158:java.awt.Dimension getMaximumSize() -> getMaximumSize
+    163:163:java.awt.Dimension getMinimumSize() -> getMinimumSize
+    168:168:java.awt.Dimension getPreferredSize() -> getPreferredSize
+com.notification.types.BorderLayoutNotification$CloseButton$1 -> com.notification.types.BorderLayoutNotification$a$1:
+    com.notification.types.BorderLayoutNotification$CloseButton this$1 -> a
+    102:102:void <init>(com.notification.types.BorderLayoutNotification$CloseButton,com.notification.types.BorderLayoutNotification) -> <init>
+    105:106:void mouseEntered(java.awt.event.MouseEvent) -> mouseEntered
+    110:111:void mouseExited(java.awt.event.MouseEvent) -> mouseExited
+    114:117:void setIsRollOver(boolean) -> a
+com.notification.types.IconNotification -> com.notification.types.IconNotification:
+    javax.swing.JLabel m_iconLabel -> a
+    int ICON_PADDING -> ICON_PADDING
+    19:32:void <init>() -> <init>
+    41:42:void setIcon(javax.swing.Icon) -> setIcon
+    48:48:javax.swing.Icon getIcon() -> getIcon
+com.notification.types.ProgressBarNotification -> com.notification.types.ProgressBarNotification:
+    javax.swing.JLabel m_label -> a
+    javax.swing.JProgressBar m_progress -> b
+    16:26:void <init>() -> <init>
+    35:37:void setTextTheme(com.theme.TextTheme) -> setTextTheme
+    40:40:java.lang.String getTitle() -> getTitle
+    44:45:void setTitle(java.lang.String) -> setTitle
+    54:55:void setProgress(int) -> setProgress
+    61:61:int getProgress() -> getProgress
+com.notification.types.TextNotification -> com.notification.types.TextNotification:
+    javax.swing.JLabel m_titleLabel -> m_titleLabel
+    javax.swing.JTextArea m_subtitleArea -> m_subtitleArea
+    com.theme.TextTheme m_textTheme -> m_textTheme
+    20:26:void <init>() -> <init>
+    29:29:java.lang.String getTitle() -> getTitle
+    33:34:void setTitle(java.lang.String) -> setTitle
+    37:37:java.lang.String getSubtitle() -> getSubtitle
+    41:42:void setSubtitle(java.lang.String) -> setSubtitle
+    45:45:com.theme.TextTheme getTextTheme() -> getTextTheme
+    53:58:void setTextTheme(com.theme.TextTheme) -> setTextTheme
+    62:68:void setWindowTheme(com.theme.WindowTheme) -> setWindowTheme
+com.notification.types.WindowNotification -> com.notification.types.WindowNotification:
+    boolean m_closeOnClick -> a
+    java.awt.event.MouseAdapter m_listener -> b
+    com.theme.WindowTheme m_theme -> c
+    java.lang.String CLICKED -> CLICKED
+    java.lang.String SHOWN -> SHOWN
+    java.lang.String HIDDEN -> HIDDEN
+    31:46:void <init>() -> <init>
+    49:49:javax.swing.JWindow getWindow() -> getWindow
+    53:62:void setPanel(javax.swing.JPanel) -> setPanel
+    68:68:boolean isCloseOnClick() -> isCloseOnClick
+    77:78:void setCloseOnClick(boolean) -> setCloseOnClick
+    81:81:com.theme.WindowTheme getWindowTheme() -> getWindowTheme
+    92:105:void setWindowTheme(com.theme.WindowTheme) -> setWindowTheme
+    108:117:void recursiveSetTheme(com.theme.WindowTheme,java.awt.Component) -> a
+    121:121:int getX() -> getX
+    126:126:int getY() -> getY
+    131:132:void setLocation(int,int) -> setLocation
+    136:136:int getWidth() -> getWidth
+    141:141:int getHeight() -> getHeight
+    146:147:void setSize(int,int) -> setSize
+    156:156:double getOpacity() -> getOpacity
+    167:168:void setOpacity(double) -> setOpacity
+    172:174:void show() -> show
+    178:180:void hide() -> hide
+    184:184:boolean isShown() -> isShown
+    19:19:void access$000(com.notification.types.WindowNotification,java.lang.String) -> a
+    19:19:boolean access$100(com.notification.types.WindowNotification) -> a
+com.notification.types.WindowNotification$1 -> com.notification.types.WindowNotification$1:
+    com.notification.types.WindowNotification this$0 -> a
+    35:35:void <init>(com.notification.types.WindowNotification) -> <init>
+    38:41:void mouseClicked(java.awt.event.MouseEvent) -> mouseClicked
+com.platform.DefaultOperatingSystem -> com.platform.DefaultOperatingSystem:
+    3:3:void <init>() -> <init>
+    6:6:boolean isSupported(java.lang.String) -> isSupported
+com.platform.Mac -> com.platform.Mac:
+    3:3:void <init>() -> <init>
+    6:10:boolean isSupported(java.lang.String) -> isSupported
+com.platform.OperatingSystem -> com.platform.OperatingSystem:
+    boolean isSupported(java.lang.String) -> isSupported
+com.platform.Platform -> com.platform.Platform:
+    com.platform.OperatingSystem m_operatingSystem -> a
+    boolean m_used -> b
+    com.platform.Platform INSTANCE -> c
+    8:19:void <init>() -> <init>
+    25:25:com.platform.OperatingSystem getOperatingSystem() -> getOperatingSystem
+    34:34:boolean isSupported(java.lang.String) -> isSupported
+    41:41:boolean isUsed() -> isUsed
+    51:52:void setAdjustForPlatform(boolean) -> setAdjustForPlatform
+    57:60:com.platform.Platform instance() -> instance
+com.platform.Unix -> com.platform.Unix:
+    3:3:void <init>() -> <init>
+    6:10:boolean isSupported(java.lang.String) -> isSupported
+com.platform.Windows -> com.platform.Windows:
+    3:3:void <init>() -> <init>
+    6:10:boolean isSupported(java.lang.String) -> isSupported
+com.theme.TextTheme -> com.theme.TextTheme:
+    java.awt.Font title -> title
+    java.awt.Font subtitle -> subtitle
+    java.awt.Color titleColor -> titleColor
+    java.awt.Color subtitleColor -> subtitleColor
+    6:6:void <init>() -> <init>
+com.theme.ThemePackage -> com.theme.ThemePackage:
+    java.util.Map m_themes -> a
+    12:14:void <init>() -> <init>
+    28:29:void setTheme(java.lang.Class,java.lang.Object) -> setTheme
+    42:43:java.lang.Object getTheme(java.lang.Class) -> getTheme
+com.theme.ThemePackagePresets -> com.theme.ThemePackagePresets:
+    7:8:void <init>() -> <init>
+    11:29:com.theme.ThemePackage cleanLight() -> cleanLight
+    33:51:com.theme.ThemePackage cleanDark() -> cleanDark
+    55:73:com.theme.ThemePackage aqua() -> aqua
+com.theme.WindowTheme -> com.theme.WindowTheme:
+    java.awt.Color background -> background
+    java.awt.Color foreground -> foreground
+    double opacity -> opacity
+    int width -> width
+    int height -> height
+    5:5:void <init>() -> <init>
+com.utils.IconUtils -> com.utils.IconUtils:
+    8:10:void <init>() -> <init>
+    24:32:javax.swing.ImageIcon createIcon(java.lang.String,int,int) -> createIcon
+com.utils.MathUtils -> com.utils.MathUtils:
+    3:3:void <init>() -> <init>
+    10:10:int sign(double) -> sign
+    25:29:double clamp(double,double,double) -> clamp
+com.utils.Screen -> com.utils.Screen:
+    int m_width -> a
+    int m_height -> b
+    int m_leftX -> c
+    int m_centerX -> d
+    int m_rightX -> e
+    int m_topY -> f
+    int m_centerY -> g
+    int m_bottomY -> h
+    int m_padding -> i
+    com.platform.Platform platform -> j
+    15:34:void <init>(boolean,int) -> <init>
+    1059:1069:void setupDimensions(boolean):59:69 -> <init>
+    1059:1069:void <init>(boolean,int):32 -> <init>
+    1094:1101:void calculatePositions():94:101 -> <init>
+    1094:1101:void <init>(boolean,int):33 -> <init>
+    43:43:com.utils.Screen standard() -> standard
+    47:47:com.utils.Screen withSpan(boolean) -> withSpan
+    51:51:com.utils.Screen withPadding(int) -> withPadding
+    55:55:com.utils.Screen withSpanAndPadding(boolean,int) -> withSpanAndPadding
+    104:122:int getX(java.lang.String,com.notification.Notification) -> getX
+    127:145:int getY(java.lang.String,com.notification.Notification) -> getY
+    150:150:int getPadding() -> getPadding
+com.utils.Time -> com.utils.Time:
+    int m_milliseconds -> a
+    boolean m_infinite -> b
+    10:13:void <init>(int,boolean) -> <init>
+    21:21:com.utils.Time seconds(double) -> seconds
+    30:30:com.utils.Time milliseconds(int) -> milliseconds
+    39:39:com.utils.Time infinite() -> infinite
+    48:48:com.utils.Time add(com.utils.Time) -> add
+    55:57:double getSeconds() -> getSeconds
+    64:66:int getMilliseconds() -> getMilliseconds
+    73:73:boolean isInfinite() -> isInfinite

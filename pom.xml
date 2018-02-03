@@ -104,6 +104,9 @@
 						<lib>${java.home}/lib/rt.jar</lib>
 						<lib>${java.home}/lib/jce.jar</lib>
 					</libs>
+					<options>
+						<option>-printmapping mapping.txt</option>
+					</options>
 				</configuration>
 				<dependencies>
 					<dependency>

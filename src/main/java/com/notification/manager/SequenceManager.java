@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.notification.Notification;
-import com.notification.NotificationFactory.Location;
 import com.notification.NotificationListener;
 import com.notification.types.WindowNotification;
 import com.utils.Time;
@@ -18,14 +17,14 @@ public class SequenceManager extends SimpleManager {
 	private Notification m_currentNotification;
 
 	{
-		m_sequence = new ArrayList<NotificationShowTime>();
+		m_sequence = new ArrayList<>();
 	}
 
 	public SequenceManager() {
 		super();
 	}
 
-	public SequenceManager(Location loc) {
+	public SequenceManager(String loc) {
 		super(loc);
 	}
 

@@ -1,7 +1,6 @@
 package com.demo;
 
 import com.notification.NotificationFactory;
-import com.notification.NotificationFactory.Location;
 import com.notification.NotificationManager;
 import com.notification.manager.SimpleManager;
 import com.notification.types.AcceptNotification;
@@ -24,9 +23,9 @@ public class SimpleManagerDemo {
 		// makes a factory with the built-in clean dark theme
 		NotificationFactory factory = new NotificationFactory(ThemePackagePresets.cleanDark());
 		// a normal manager that just pops up the notification
-		NotificationManager plain = new SimpleManager(Location.NORTHWEST);
+		NotificationManager plain = new SimpleManager(NotificationFactory.NORTHWEST);
 		// a fade manager that will make the window fade in and out over a two second period
-		SimpleManager fade = new SimpleManager(Location.SOUTHWEST);
+		SimpleManager fade = new SimpleManager(NotificationFactory.SOUTHWEST);
 		fade.setFadeEnabled(true);
 		fade.setFadeTime(Time.seconds(2));
 

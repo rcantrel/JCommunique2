@@ -7,7 +7,6 @@ import java.util.List;
 import javax.swing.Timer;
 
 import com.notification.Notification;
-import com.notification.NotificationFactory.Location;
 import com.utils.MathUtils;
 
 /**
@@ -35,7 +34,7 @@ public class QueueManager extends SimpleManager {
 		super();
 	}
 
-	public QueueManager(Location loc) {
+	public QueueManager(String loc) {
 		super(loc);
 	}
 
@@ -116,7 +115,7 @@ public class QueueManager extends SimpleManager {
 			if (notes.size() == 0)
 				return;
 
-			Location loc = getLocation();
+			String loc = getLocation();
 			int startx = getScreen().getX(loc, notes.get(0));
 			int starty = getScreen().getY(loc, notes.get(0));
 

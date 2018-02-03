@@ -1,7 +1,6 @@
 package com.demo;
 
 import com.notification.NotificationFactory;
-import com.notification.NotificationFactory.Location;
 import com.notification.manager.QueueManager;
 import com.notification.types.WindowNotification;
 import com.platform.Platform;
@@ -14,7 +13,7 @@ public class QueueManagerDemo {
 		Platform.instance().setAdjustForPlatform(true);
 
 		NotificationFactory factory = new NotificationFactory(ThemePackagePresets.cleanDark());
-		QueueManager manager = new QueueManager(Location.SOUTHEAST);
+		QueueManager manager = new QueueManager(NotificationFactory.SOUTHEAST);
 		// sets how quickly old notifications should move out of the way for new ones
 		manager.setSnapFactor(0.23);
 		manager.setScrollDirection(QueueManager.ScrollDirection.NORTH);

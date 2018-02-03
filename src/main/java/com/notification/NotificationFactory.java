@@ -22,13 +22,17 @@ import com.theme.WindowTheme;
 public final class NotificationFactory {
 	private ThemePackage m_pack;
 	private HashMap<Class<? extends Notification>, NotificationBuilder<? extends Notification>> m_builders;
-
-	public enum Location {
-		NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST
-	}
+	public static final String NORTH = "NORTH";
+	public static final String NORTHEAST = "NORTHEAST";
+	public static final String EAST = "EAST";
+	public static final String SOUTHEAST = "SOUTHEAST";
+	public static final String SOUTH = "SOUTH";
+	public static final String SOUTHWEST = "SOUTHWEST";
+	public static final String WEST = "WEST";
+	public static final String NORTHWEST = "NORTHWEST";
 
 	{
-		m_builders = new HashMap<Class<? extends Notification>, NotificationBuilder<? extends Notification>>();
+		m_builders = new HashMap<>();
 		m_builders.put(TextNotification.class, new TextNotificationBuilder());
 		m_builders.put(AcceptNotification.class, new AcceptNotificationBuilder());
 		m_builders.put(IconNotification.class, new IconNotificationBuilder());

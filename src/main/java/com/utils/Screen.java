@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 import java.awt.Window;
 
 import com.notification.Notification;
-import com.notification.NotificationFactory.Location;
+import com.notification.NotificationFactory;
 import com.platform.Mac;
 import com.platform.Platform;
 
@@ -24,7 +24,7 @@ public class Screen {
 	private int m_bottomY = 0;
 
 	private int m_padding = 0;
-	
+
 	private Platform platform = new Platform();
 
 	private Screen(boolean spanMultipleMonitors, int padding) {
@@ -100,46 +100,46 @@ public class Screen {
 		m_bottomY = m_height - m_padding - (platform.getOperatingSystem() instanceof Mac ? 50 : 0);
 	}
 
-	public int getX(Location loc, Notification note) {
+	public int getX(String loc, Notification note) {
 		switch (loc) {
-		case SOUTHWEST:
+		case NotificationFactory.SOUTHWEST:
 			return m_leftX;
-		case WEST:
+		case NotificationFactory.WEST:
 			return m_leftX;
-		case NORTHWEST:
+		case NotificationFactory.NORTHWEST:
 			return m_leftX;
-		case NORTH:
+		case NotificationFactory.NORTH:
 			return m_centerX - note.getWidth() / 2;
-		case SOUTH:
+		case NotificationFactory.SOUTH:
 			return m_centerX - note.getWidth() / 2;
-		case SOUTHEAST:
+		case NotificationFactory.SOUTHEAST:
 			return m_rightX - note.getWidth();
-		case EAST:
+		case NotificationFactory.EAST:
 			return m_rightX - note.getWidth();
-		case NORTHEAST:
+		case NotificationFactory.NORTHEAST:
 			return m_rightX - note.getWidth();
 		default:
 			return -1;
 		}
 	}
 
-	public int getY(Location loc, Notification note) {
+	public int getY(String loc, Notification note) {
 		switch (loc) {
-		case SOUTHWEST:
+		case NotificationFactory.SOUTHWEST:
 			return m_bottomY - note.getHeight();
-		case WEST:
+		case NotificationFactory.WEST:
 			return m_centerY - note.getHeight() / 2;
-		case NORTHWEST:
+		case NotificationFactory.NORTHWEST:
 			return m_topY;
-		case NORTH:
+		case NotificationFactory.NORTH:
 			return m_topY;
-		case SOUTH:
+		case NotificationFactory.SOUTH:
 			return m_bottomY - note.getHeight();
-		case SOUTHEAST:
+		case NotificationFactory.SOUTHEAST:
 			return m_bottomY - note.getHeight();
-		case EAST:
+		case NotificationFactory.EAST:
 			return m_centerY - note.getHeight() / 2;
-		case NORTHEAST:
+		case NotificationFactory.NORTHEAST:
 			return m_topY;
 		default:
 			return -1;

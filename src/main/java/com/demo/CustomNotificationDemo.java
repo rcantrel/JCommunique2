@@ -2,7 +2,6 @@ package com.demo;
 
 import com.notification.NotificationFactory;
 import com.notification.NotificationManager;
-import com.notification.NotificationFactory.Location;
 import com.notification.manager.SimpleManager;
 import com.platform.Platform;
 import com.theme.ThemePackagePresets;
@@ -17,7 +16,7 @@ public class CustomNotificationDemo {
 		factory.addBuilder(CustomNotification.class, new CustomNotification.CustomBuilder());
 
 		// add the Notification
-		NotificationManager manager = new SimpleManager(Location.NORTH);
+		NotificationManager manager = new SimpleManager(NotificationFactory.NORTH);
 		manager.addNotification(factory.build(CustomNotification.class, "this is test text"), Time.infinite());
 	}
 }

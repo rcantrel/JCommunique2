@@ -1,7 +1,6 @@
 package com.demo;
 
 import com.notification.NotificationFactory;
-import com.notification.NotificationFactory.Location;
 import com.notification.manager.SlideManager;
 import com.notification.manager.SlideManager.SlideDirection;
 import com.notification.types.TextNotification;
@@ -13,7 +12,7 @@ public class SlideManagerDemo {
 		// makes a factory with the clean theme
 		NotificationFactory factory = new NotificationFactory(ThemePackagePresets.cleanLight());
 		// adds a new manager which displays Notifications at the bottom right of the screen
-		SlideManager manager = new SlideManager(Location.SOUTHEAST);
+		SlideManager manager = new SlideManager(NotificationFactory.SOUTHEAST);
 
 		// adds a notification that appears southeast and slides in the default direction, north
 		manager.addNotification(factory.buildTextNotification("This is sliding north", "Appeared southeast"), Time.seconds(5));
@@ -24,7 +23,7 @@ public class SlideManagerDemo {
 		// these two notifications should finish in the same end position
 
 		Thread.sleep(1000);
-		manager.setLocation(Location.NORTHEAST);
+		manager.setLocation(NotificationFactory.NORTHEAST);
 		manager.setSlideDirection(SlideDirection.SOUTH);
 		TextNotification northeastNotification = factory.buildTextNotification("This is sliding south", "Appeared northeast");
 		northeastNotification.setCloseOnClick(true);

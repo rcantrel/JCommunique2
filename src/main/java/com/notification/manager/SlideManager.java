@@ -7,7 +7,7 @@ import java.util.HashMap;
 import javax.swing.Timer;
 
 import com.notification.Notification;
-import com.notification.NotificationFactory.Location;
+import com.notification.NotificationFactory;
 import com.notification.NotificationManager;
 import com.utils.Screen;
 import com.utils.Time;
@@ -16,7 +16,7 @@ import com.utils.Time;
  * Slides Notifications into a certain area. This may not work on all machines.
  */
 public class SlideManager extends NotificationManager {
-	private Location m_loc;
+	private String m_loc;
 
 	private Screen m_standardScreen;
 	private Screen m_noPaddingScreen;
@@ -44,17 +44,17 @@ public class SlideManager extends NotificationManager {
 	}
 
 	public SlideManager() {
-		setLocation(Location.NORTHEAST);
+		setLocation(NotificationFactory.NORTHEAST);
 	}
 
-	public SlideManager(Location loc) {
+	public SlideManager(String loc) {
 		setLocation(loc);
 	}
 
 	/**
 	 * @return the location where the Notifications show up
 	 */
-	public Location getLocation() {
+	public String getLocation() {
 		return m_loc;
 	}
 
@@ -64,7 +64,7 @@ public class SlideManager extends NotificationManager {
 	 * @param loc
 	 *            the Location to show at
 	 */
-	public void setLocation(Location loc) {
+	public void setLocation(String loc) {
 		m_loc = loc;
 		if (!m_overwrite)
 			recalculateSlideDirection();
@@ -111,20 +111,20 @@ public class SlideManager extends NotificationManager {
 
 	private void recalculateSlideDirection() {
 		switch (m_loc) {
-		case NORTHWEST:
-		case NORTH:
-		case NORTHEAST:
+		case NotificationFactory.NORTHWEST:
+		case NotificationFactory.NORTH:
+		case NotificationFactory.NORTHEAST:
 			m_slideIn = SlideDirection.SOUTH;
 			break;
-		case EAST:
+		case NotificationFactory.EAST:
 			m_slideIn = SlideDirection.WEST;
 			break;
-		case SOUTHEAST:
-		case SOUTH:
-		case SOUTHWEST:
+		case NotificationFactory.SOUTHEAST:
+		case NotificationFactory.SOUTH:
+		case NotificationFactory.SOUTHWEST:
 			m_slideIn = SlideDirection.NORTH;
 			break;
-		case WEST:
+		case NotificationFactory.WEST:
 			m_slideIn = SlideDirection.EAST;
 			break;
 		}
@@ -154,10 +154,10 @@ public class SlideManager extends NotificationManager {
 	}
 
 	private class SlideState {
-		public Location loc;
+		public String loc;
 		public SlideDirection returnDirection;
 
-		public SlideState(Location loc, SlideDirection returnDirection) {
+		public SlideState(String loc, SlideDirection returnDirection) {
 			this.loc = loc;
 			this.returnDirection = returnDirection;
 		}
@@ -193,9 +193,9 @@ public class SlideManager extends NotificationManager {
 
 		protected boolean m_slideIn;
 
-		protected Location m_startLocation;
+		protected String m_startLocation;
 
-		public void animate(Notification note, Location loc, double delay, double slideDelta, boolean slideIn) {
+		public void animate(Notification note, String loc, double delay, double slideDelta, boolean slideIn) {
 			m_note = note;
 			m_x = note.getX();
 			m_y = note.getY();
@@ -220,7 +220,7 @@ public class SlideManager extends NotificationManager {
 				m_note.hide();
 		}
 
-		public abstract void setBorderPosition(Notification note, Location loc);
+		public abstract void setBorderPosition(Notification note, String loc);
 	}
 
 	private class NorthSlider extends Slider {
@@ -237,7 +237,7 @@ public class SlideManager extends NotificationManager {
 		}
 
 		@Override
-		public void setBorderPosition(Notification note, Location loc) {
+		public void setBorderPosition(Notification note, String loc) {
 			note.setLocation(m_standardScreen.getX(loc, note), m_noPaddingScreen.getY(loc, note));
 		}
 	}
@@ -256,7 +256,7 @@ public class SlideManager extends NotificationManager {
 		}
 
 		@Override
-		public void setBorderPosition(Notification note, Location loc) {
+		public void setBorderPosition(Notification note, String loc) {
 			note.setLocation(m_standardScreen.getX(loc, note), m_noPaddingScreen.getY(loc, note));
 		}
 	}
@@ -275,7 +275,7 @@ public class SlideManager extends NotificationManager {
 		}
 
 		@Override
-		public void setBorderPosition(Notification note, Location loc) {
+		public void setBorderPosition(Notification note, String loc) {
 			note.setLocation(m_noPaddingScreen.getX(loc, note), m_standardScreen.getY(loc, note));
 		}
 	}
@@ -294,7 +294,7 @@ public class SlideManager extends NotificationManager {
 		}
 
 		@Override
-		public void setBorderPosition(Notification note, Location loc) {
+		public void setBorderPosition(Notification note, String loc) {
 			note.setLocation(m_noPaddingScreen.getX(loc, note), m_standardScreen.getY(loc, note));
 		}
 	}

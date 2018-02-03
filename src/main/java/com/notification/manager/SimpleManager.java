@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.notification.Notification;
-import com.notification.NotificationFactory.Location;
+import com.notification.NotificationFactory;
 import com.notification.NotificationManager;
 import com.platform.Platform;
 import com.utils.Screen;
@@ -15,7 +15,7 @@ import com.utils.Time;
  * results will vary across different platforms).
  */
 public class SimpleManager extends NotificationManager {
-	private Location m_loc;
+	private String m_loc;
 	private Screen m_screen;
 
 	private boolean m_fadeEnabled = false;
@@ -33,10 +33,10 @@ public class SimpleManager extends NotificationManager {
 	}
 
 	public SimpleManager() {
-		m_loc = Location.NORTHEAST;
+		m_loc = NotificationFactory.NORTHEAST;
 	}
 
-	public SimpleManager(Location loc) {
+	public SimpleManager(String loc) {
 		m_loc = loc;
 	}
 
@@ -96,7 +96,7 @@ public class SimpleManager extends NotificationManager {
 	/**
 	 * @return the location where the Notifications show up
 	 */
-	public Location getLocation() {
+	public String getLocation() {
 		return m_loc;
 	}
 
@@ -106,7 +106,7 @@ public class SimpleManager extends NotificationManager {
 	 * @param loc
 	 *            the Location to show at
 	 */
-	public void setLocation(Location loc) {
+	public void setLocation(String loc) {
 		m_loc = loc;
 	}
 
