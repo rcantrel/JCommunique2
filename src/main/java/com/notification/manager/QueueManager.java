@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import com.notification.Notification;
@@ -142,7 +143,14 @@ public class QueueManager extends SimpleManager {
 				if (Math.abs(moveAmount) < 1) {
 					moveAmount = MathUtils.sign(moveAmount);
 				}
-				note.setLocation(startx, note.getY() + (int) moveAmount);
+				final int moveAmountFinal = (int)moveAmount;
+				SwingUtilities.invokeLater(new Runnable() {
+					
+					@Override
+					public void run() {
+						note.setLocation(startx, note.getY() + (int) moveAmountFinal);
+					}
+				});
 			}
 		}
 	}
