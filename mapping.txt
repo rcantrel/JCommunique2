@@ -148,37 +148,43 @@ com.notification.manager.QueueManager -> com.notification.manager.QueueManager:
     int m_verticalPadding -> b
     double m_snapFactor -> c
     com.notification.manager.QueueManager$ScrollDirection m_scroll -> d
-    17:35:void <init>() -> <init>
-    17:39:void <init>(java.lang.String) -> <init>
-    45:45:int getVerticalPadding() -> getVerticalPadding
-    56:57:void setVerticalPadding(int) -> setVerticalPadding
-    64:64:double getSnapFactor() -> getSnapFactor
-    75:76:void setSnapFactor(double) -> setSnapFactor
-    82:82:com.notification.manager.QueueManager$ScrollDirection getScrollDirection() -> getScrollDirection
-    92:93:void setScrollDirection(com.notification.manager.QueueManager$ScrollDirection) -> setScrollDirection
-    100:101:void stop() -> stop
-    15:15:int access$100(com.notification.manager.QueueManager) -> a
-    15:15:com.notification.manager.QueueManager$ScrollDirection access$200(com.notification.manager.QueueManager) -> b
-    15:15:double access$300(com.notification.manager.QueueManager) -> c
+    18:36:void <init>() -> <init>
+    18:40:void <init>(java.lang.String) -> <init>
+    46:46:int getVerticalPadding() -> getVerticalPadding
+    57:58:void setVerticalPadding(int) -> setVerticalPadding
+    65:65:double getSnapFactor() -> getSnapFactor
+    76:77:void setSnapFactor(double) -> setSnapFactor
+    83:83:com.notification.manager.QueueManager$ScrollDirection getScrollDirection() -> getScrollDirection
+    93:94:void setScrollDirection(com.notification.manager.QueueManager$ScrollDirection) -> setScrollDirection
+    101:102:void stop() -> stop
+    16:16:int access$100(com.notification.manager.QueueManager) -> a
+    16:16:com.notification.manager.QueueManager$ScrollDirection access$200(com.notification.manager.QueueManager) -> b
+    16:16:double access$300(com.notification.manager.QueueManager) -> c
 com.notification.manager.QueueManager$1 -> com.notification.manager.QueueManager$1:
     com.notification.Notification notification -> a
     com.utils.Time time -> b
     1065:1068:void com.notification.manager.SequenceManager$NotificationShowTime.<init>(com.notification.manager.SequenceManager,com.notification.Notification,com.utils.Time):65:68 -> <init>
 com.notification.manager.QueueManager$MovementManager -> com.notification.manager.QueueManager$a:
     com.notification.manager.QueueManager this$0 -> a
-    103:103:void <init>(com.notification.manager.QueueManager) -> <init>
-    114:147:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
-    1105:1109:int getPreviousShownIndex(java.util.List,int):105:109 -> actionPerformed
-    1105:1109:void actionPerformed(java.awt.event.ActionEvent):124 -> actionPerformed
-    103:103:void <init>(com.notification.manager.QueueManager,byte) -> <init>
+    104:104:void <init>(com.notification.manager.QueueManager) -> <init>
+    115:155:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+    1106:1110:int getPreviousShownIndex(java.util.List,int):106:110 -> actionPerformed
+    1106:1110:void actionPerformed(java.awt.event.ActionEvent):125 -> actionPerformed
+    104:104:void <init>(com.notification.manager.QueueManager,byte) -> <init>
+com.notification.manager.QueueManager$MovementManager$1 -> com.notification.manager.QueueManager$a$1:
+    com.notification.Notification val$note -> a
+    int val$startx -> b
+    int val$moveAmountFinal -> c
+    147:147:void <init>(com.notification.manager.QueueManager$MovementManager,com.notification.Notification,int,int) -> <init>
+    151:152:void run() -> run
 com.notification.manager.QueueManager$ScrollDirection -> com.notification.manager.QueueManager$ScrollDirection:
     com.notification.manager.QueueManager$ScrollDirection NORTH -> NORTH
     com.notification.manager.QueueManager$ScrollDirection SOUTH -> SOUTH
     com.notification.manager.QueueManager$ScrollDirection[] $VALUES -> a
-    24:24:com.notification.manager.QueueManager$ScrollDirection[] values() -> values
-    24:24:com.notification.manager.QueueManager$ScrollDirection valueOf(java.lang.String) -> valueOf
-    24:24:void <init>(java.lang.String,int) -> <init>
-    24:25:void <clinit>() -> <clinit>
+    25:25:com.notification.manager.QueueManager$ScrollDirection[] values() -> values
+    25:25:com.notification.manager.QueueManager$ScrollDirection valueOf(java.lang.String) -> valueOf
+    25:25:void <init>(java.lang.String,int) -> <init>
+    25:26:void <clinit>() -> <clinit>
 com.notification.manager.SequenceManager -> com.notification.manager.SequenceManager:
     java.util.List m_sequence -> a
     com.notification.Notification m_currentNotification -> b
