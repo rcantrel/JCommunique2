@@ -134,6 +134,7 @@ done
 
 echo
 echo
+git push
 git status
 echo
 
