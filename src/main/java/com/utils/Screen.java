@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
-import java.awt.Window;
 
 import com.notification.Notification;
 import com.notification.NotificationFactory;
@@ -30,12 +29,6 @@ public class Screen {
 	private Screen(boolean spanMultipleMonitors, int padding) {
 		m_padding = padding;
 		setupDimensions(spanMultipleMonitors);
-		calculatePositions();
-	}
-
-	private Screen(Window window, int padding) {
-		m_padding = padding;
-		setupDimensions(window);
 		calculatePositions();
 	}
 
@@ -66,28 +59,6 @@ public class Screen {
 			m_width = gd.getDisplayMode().getWidth();
 			m_height = gd.getDisplayMode().getHeight();
 		}
-	}
-
-	private void setupDimensions(Window window) {
-		return;
-		//		GraphicsConfiguration config = window.getGraphicsConfiguration();
-		//		GraphicsDevice myScreen = config.getDevice();
-		//		GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		//		GraphicsDevice[] allScreens = env.getScreenDevices();
-		//		for (int i = 0; i < allScreens.length; i++) {
-		//			m_width += allScreens[i].getDisplayMode().getWidth();
-		//			m_height += allScreens[i].getDisplayMode().getHeight();
-		//			if (allScreens[i].equals(myScreen)) {
-		//				break;
-		//			}
-		//		}
-		//
-		//		if(m_width == 0 && m_height == 0) {
-		//			System.out.println("Unable to determine screen size");
-		//			setupDimensions(true);
-		//		} else {
-		//			System.out.println(m_width + "  " + m_height);
-		//		}
 	}
 
 	private void calculatePositions() {
