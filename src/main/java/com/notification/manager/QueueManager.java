@@ -112,46 +112,52 @@ public class QueueManager extends SimpleManager {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			List<Notification> notes = getNotifications();
-			if (notes.size() == 0)
-				return;
+		    (new Thread(new Runnable() {
+                
+                @Override
+                public void run() {
+                    List<Notification> notes = getNotifications();
+                    if (notes.size() == 0)
+                        return;
 
-			String loc = getLocation();
-			int startx = getScreen().getX(loc, notes.get(0));
-			int starty = getScreen().getY(loc, notes.get(0));
+                    String loc = getLocation();
+                    int startx = getScreen().getX(loc, notes.get(0));
+                    int starty = getScreen().getY(loc, notes.get(0));
 
-			for (int i = notes.size() - 1; i >= 0; i--) {
-				Notification note = notes.get(i);
-				int prevIndex = getPreviousShownIndex(notes, i + 1);
+                    for (int i = notes.size() - 1; i >= 0; i--) {
+                        Notification note = notes.get(i);
+                        int prevIndex = getPreviousShownIndex(notes, i + 1);
 
-				int dif = 0;
-				int desdif = 0;
-				if (prevIndex == -1) {
-					dif = note.getY() - starty;
-					desdif = 0;
-				} else {
-					Notification prev = notes.get(prevIndex);
-					dif = note.getY() - prev.getY();
-					desdif = prev.getHeight() + m_verticalPadding;
-					if (m_scroll == ScrollDirection.NORTH) {
-						desdif *= -1;
-					}
-				}
+                        int dif = 0;
+                        int desdif = 0;
+                        if (prevIndex == -1) {
+                            dif = note.getY() - starty;
+                            desdif = 0;
+                        } else {
+                            Notification prev = notes.get(prevIndex);
+                            dif = note.getY() - prev.getY();
+                            desdif = prev.getHeight() + m_verticalPadding;
+                            if (m_scroll == ScrollDirection.NORTH) {
+                                desdif *= -1;
+                            }
+                        }
 
-				int delta = desdif - dif;
-				double moveAmount = delta * m_snapFactor;
-				if (Math.abs(moveAmount) < 1) {
-					moveAmount = MathUtils.sign(moveAmount);
-				}
-				final int moveAmountFinal = (int)moveAmount;
-				SwingUtilities.invokeLater(new Runnable() {
-					
-					@Override
-					public void run() {
-						note.setLocation(startx, note.getY() + (int) moveAmountFinal);
-					}
-				});
-			}
+                        int delta = desdif - dif;
+                        double moveAmount = delta * m_snapFactor;
+                        if (Math.abs(moveAmount) < 1) {
+                            moveAmount = MathUtils.sign(moveAmount);
+                        }
+                        final int moveAmountFinal = (int)moveAmount;
+                        SwingUtilities.invokeLater(new Runnable() {
+                            
+                            @Override
+                            public void run() {
+                                note.setLocation(startx, note.getY() + (int) moveAmountFinal);
+                            }
+                        });
+                    }
+                }
+            })).start();			
 		}
 	}
 }

@@ -157,9 +157,9 @@ com.notification.manager.QueueManager -> com.notification.manager.QueueManager:
     83:83:com.notification.manager.QueueManager$ScrollDirection getScrollDirection() -> getScrollDirection
     93:94:void setScrollDirection(com.notification.manager.QueueManager$ScrollDirection) -> setScrollDirection
     101:102:void stop() -> stop
-    16:16:int access$100(com.notification.manager.QueueManager) -> a
-    16:16:com.notification.manager.QueueManager$ScrollDirection access$200(com.notification.manager.QueueManager) -> b
-    16:16:double access$300(com.notification.manager.QueueManager) -> c
+    16:16:int access$200(com.notification.manager.QueueManager) -> a
+    16:16:com.notification.manager.QueueManager$ScrollDirection access$300(com.notification.manager.QueueManager) -> b
+    16:16:double access$400(com.notification.manager.QueueManager) -> c
 com.notification.manager.QueueManager$1 -> com.notification.manager.QueueManager$1:
     com.notification.Notification notification -> a
     com.utils.Time time -> b
@@ -167,16 +167,21 @@ com.notification.manager.QueueManager$1 -> com.notification.manager.QueueManager
 com.notification.manager.QueueManager$MovementManager -> com.notification.manager.QueueManager$a:
     com.notification.manager.QueueManager this$0 -> a
     104:104:void <init>(com.notification.manager.QueueManager) -> <init>
-    115:155:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
-    1106:1110:int getPreviousShownIndex(java.util.List,int):106:110 -> actionPerformed
-    1106:1110:void actionPerformed(java.awt.event.ActionEvent):125 -> actionPerformed
+    115:161:void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
     104:104:void <init>(com.notification.manager.QueueManager,byte) -> <init>
+    104:104:int access$100(com.notification.manager.QueueManager$MovementManager,java.util.List,int) -> a
+    1106:1110:int getPreviousShownIndex(java.util.List,int):106:110 -> a
+    1106:1110:int access$100(com.notification.manager.QueueManager$MovementManager,java.util.List,int):104 -> a
 com.notification.manager.QueueManager$MovementManager$1 -> com.notification.manager.QueueManager$a$1:
+    com.notification.manager.QueueManager$MovementManager this$1 -> a
+    115:115:void <init>(com.notification.manager.QueueManager$MovementManager) -> <init>
+    119:159:void run() -> run
+com.notification.manager.QueueManager$MovementManager$1$1 -> com.notification.manager.QueueManager$a$1$1:
     com.notification.Notification val$note -> a
     int val$startx -> b
     int val$moveAmountFinal -> c
-    147:147:void <init>(com.notification.manager.QueueManager$MovementManager,com.notification.Notification,int,int) -> <init>
-    151:152:void run() -> run
+    151:151:void <init>(com.notification.manager.QueueManager$MovementManager$1,com.notification.Notification,int,int) -> <init>
+    155:156:void run() -> run
 com.notification.manager.QueueManager$ScrollDirection -> com.notification.manager.QueueManager$ScrollDirection:
     com.notification.manager.QueueManager$ScrollDirection NORTH -> NORTH
     com.notification.manager.QueueManager$ScrollDirection SOUTH -> SOUTH
