@@ -147,6 +147,7 @@ public class QueueManager extends SimpleManager {
                         if (Math.abs(moveAmount) < 1) {
                             moveAmount = MathUtils.sign(moveAmount);
                         }
+                        
                         final int moveAmountFinal = (int)moveAmount;
                         SwingUtilities.invokeLater(new Runnable() {
                             
