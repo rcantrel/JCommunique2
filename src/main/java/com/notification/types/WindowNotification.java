@@ -22,8 +22,8 @@ public abstract class WindowNotification extends Notification {
 
 	private WindowTheme m_theme;
 
-	private static final int DEFAULT_WIDTH = 300;
-	private static final int DEFAULT_HEIGHT = 100;
+	protected static final int DEFAULT_WIDTH = 300;
+	protected static final int DEFAULT_HEIGHT = 100;
 	public static final String CLICKED = "clicked";
 	public static final String SHOWN = "shown";
 	public static final String HIDDEN = "hidden";

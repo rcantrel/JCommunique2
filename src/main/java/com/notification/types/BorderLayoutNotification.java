@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -12,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -78,6 +80,39 @@ public class BorderLayoutNotification extends WindowNotification {
 	public void showCloseButton(boolean showCloseButton) {
 		closeButton.setVisible(showCloseButton);
 	}
+
+    /**
+     *
+     *
+     * @param label
+     * @param text
+     * @param extraRemoval
+     * @return
+     */
+    protected static int setTextFit(JLabel label, String text, int extraRemoval) {
+        Font originalFont = (Font)label.getClientProperty("originalfont"); // Get the original Font from client properties
+        if (originalFont == null) { // First time we call it: add it
+            originalFont = label.getFont();
+            label.putClientProperty("originalfont", originalFont);
+        }
+        int fontSize = originalFont.getSize();
+        int stringWidth = label.getFontMetrics(originalFont).stringWidth(text);
+        int componentWidth = label.getIcon() == null ? 280-extraRemoval : 270-extraRemoval - label.getIcon().getIconWidth();
+
+        if (stringWidth > componentWidth) { // Resize only if needed
+            // Find out how much the font can shrink in width.
+            double widthRatio = (double)componentWidth / (double)stringWidth;
+
+            fontSize = (int)Math.floor(originalFont.getSize() * widthRatio); // Keep the minimum size
+
+            // Set the label's font size to the newly determined size.
+            label.setFont(new Font(originalFont.getName(), originalFont.getStyle(), fontSize));
+        } else
+            label.setFont(originalFont); // Text fits, do not change font size
+
+        label.setText(text);
+        return fontSize;
+    }
 
 	private class CloseButton extends JButton implements ActionListener {
 		private static final long serialVersionUID = 1L;
